@@ -14,57 +14,35 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### STEPS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*   Deleting of unneccesary files and component, Creating of the Components i need to carry out my projects
+    #App.js
+    #TransactionData.js
+    #DisplayTran.js
+    #TransactionForm.js
+    #FilterTransaction.js
 
-### `npm run build`
+*   Creating of basic HTML including struturing of the table to suit the desired outcome, and creating of buttons
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*   Installation of json server and db.json file, then used useEffect to fetch to GET the database from the server
+             useEffect(() => {
+             fetch("http://localhost:3000/transactions")
+             .then(res => res.json())
+             .then(transactions => {setTransactions(transactions)})
+             },[hasChange])
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*   Creating of useState[destructing]  to handle controlled flow
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+*   Defining of various codes in the components created and passing through prop and using of .map() to iterate over the data list
+                {transactions.map((transaction) => {
+                return <TransactionData key={transaction.id}
+                handleDelete={handleDelete}
+                count={count++}
+                transaction={transaction}/>)}
+        while passing the return through a child component "<TransactionData />"
 
-### `npm run eject`
+*   Adding of function to the buttons and event listeners 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+*   Added functionlality to the filter and Delete button and finally added CSS to the project
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
